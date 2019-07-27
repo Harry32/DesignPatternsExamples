@@ -75,22 +75,22 @@ class Director:
         car = Car()
 
         # First goes the body
-        body = self.__builder.getBody(self)
+        body = self.__builder.getBody()
         car.setBody(body)
 
         # Then engine
-        engine = self.__builder.getEngine(self)
+        engine = self.__builder.getEngine()
         car.setEngine(engine)
 
         # And four wheels
         i = 0
         while i < 4:
-            wheel = self.__builder.getWheel(self)
+            wheel = self.__builder.getWheel()
             car.attachWheel(wheel)
             i += 1
 
         # Finally the color
-        color = self.__builder.getColor(self)
+        color = self.__builder.getColor()
         car.setColor(color)
 
         return car
