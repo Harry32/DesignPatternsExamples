@@ -12,6 +12,10 @@ from Behaving.Command import Screen, ScreenInvoker, CutCommand, PasteCommand
 from Behaving.Interpreter import TerminalExpression, AndExpression, OrExpression
 from Behaving.State import Computer, On, Off, Suspend, Hibernate
 from Behaving.ChainOfResponsibility import Car as CarChain, WaterHandler, FuelHandler, OilHandler
+from Behaving.Observer import Observable, AmericanStockMarket, EuropeanStockMarket
+from Behaving.Strategy import PrimeFinderClient
+from Behaving.Memento import Data
+from Behaving.Template import MakePizza, MakeCake
 
 
 # region Factory
@@ -550,4 +554,116 @@ class ChainOfResponsibilityExecution:
         car3 = CarChain("My Car 3", 10, 10, 10)
         print(">>> garage_handler.handle_request(car3)")
         garage_handler.handle_request(car3)
+# endregion
+
+
+# region Observer
+class ObserverExecution:
+
+    @staticmethod
+    def execute():
+        print("Initializing Observer execution")
+        print()
+
+        print(">>> really_big_company = Observable()")
+        really_big_company = Observable()
+
+        print(">>> american_observer = AmericanStockMarket()")
+        american_observer = AmericanStockMarket()
+        print(">>> european_observer = EuropeanStockMarket()")
+        european_observer = EuropeanStockMarket()
+
+        print(">>> really_big_company.register(american_observer)")
+        really_big_company.register(american_observer)
+        print(">>> really_big_company.register(european_observer)")
+        really_big_company.register(european_observer)
+
+        print(">>> really_big_company.update_observers(\"important_update\", msg=\"CEO unexpectedly resigns\")")
+        really_big_company.update_observers("important_update", msg="CEO unexpectedly resigns")
+# endregion
+
+
+# region Strategy
+class StrategyExecution:
+
+    @staticmethod
+    def execute():
+        print("Initializing Strategy execution")
+        print()
+
+        print(">>> prime_finder = PrimeFinderClient(50)")
+        prime_finder = PrimeFinderClient(50)
+        print(">>> prime_finder.get_primes()")
+        prime_finder.get_primes()
+
+        print(">>> prime_finder = PrimeFinderClient(100)")
+        prime_finder = PrimeFinderClient(100)
+        print(">>> prime_finder.get_primes()")
+        prime_finder.get_primes()
+# endregion
+
+
+# region Memento
+class MementoExecution:
+
+    @staticmethod
+    def execute():
+        print("Initializing Memento execution")
+        print()
+        # Test Memento and Command
+        print(">>> data = Data()")
+        data = Data()
+        print(">>> repeats = 10")
+        repeats = 10
+
+        print(">>> for i in range(repeats)")
+        print("...     data.save()")
+        print("...     data.numbers.append(i)")
+        print("...")
+        for i in range(repeats):
+            data.save()
+            data.numbers.append(i)
+
+        print(">>> data.save()")
+        data.save()
+        print(">>> data.numbers")
+        print(data.numbers)
+
+        print(">>> for i in range(repeats)")
+        print("...     data.undo())")
+        print("...     print(data.numbers)")
+        print("...")
+        for i in range(repeats):
+            data.undo()
+            print(data.numbers)
+# endregion
+
+
+# region Template
+class TemplateExecution:
+
+    @staticmethod
+    def execute():
+        print("Initializing Template execution")
+        print()
+
+        print(">>> pizza = MakePizza()")
+        pizza = MakePizza()
+        print(">>> pizza.go(5)")
+        pizza.go(5)
+        print(">>> pizza.go(2)")
+        try:
+            pizza.go(2)
+        except Exception as e:
+            print(str(e))
+
+        print(">>> cake = MakeCake()")
+        cake = MakeCake()
+        print(">>> cake.go(3)")
+        cake.go(3)
+        print(">>> cake.go(1)")
+        try:
+            cake.go(1)
+        except Exception as e:
+            print(str(e))
 # endregion
