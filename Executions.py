@@ -27,34 +27,34 @@ class FactoryExecution:
         print("Initializing Factory execution")
         print()
 
-        print("factory = ShapeFactory()")
+        print(">>> factory = ShapeFactory()")
         factory = ShapeFactory()
 
-        print("shape1 = factory.getShape('Circle')")
+        print(">>> shape1 = factory.getShape('Circle')")
         shape1 = factory.getShape('Circle')
 
-        print("shape1.draw()")
+        print(">>> shape1.draw()")
         shape1.draw()
-        print("shape1.getSides()")
+        print(">>> shape1.getSides()")
         shape1.getSides()
-        print("shape1.getVertices()")
+        print(">>> shape1.getVertices()")
         shape1.getVertices()
 
         print()
 
-        print("shape2 = factory.getShape('Triangle')")
+        print(">>> shape2 = factory.getShape('Triangle')")
         shape2 = factory.getShape('Triangle')
 
-        print("shape2.draw()")
+        print(">>> shape2.draw()")
         shape2.draw()
-        print("shape2.getSides()")
+        print(">>> shape2.getSides()")
         shape2.getSides()
-        print("shape2.getVertices()")
+        print(">>> shape2.getVertices()")
         shape2.getVertices()
 
         print()
 
-        print("shape3 = factory.getShape('Hexagon')")
+        print(">>> shape3 = factory.getShape('Hexagon')")
         shape3 = factory.getShape('Hexagon')
 # endregion
 
@@ -68,69 +68,69 @@ class AbstractFactoryExecution:
         print("Initializing Abstract Factory execution")
         print()
 
-        print("factory2D = Shape2DFactory()")
+        print(">>> factory2D = Shape2DFactory()")
         factory2D = Shape2DFactory()
-        print("factory3D = Shape3DFactory()")
+        print(">>> factory3D = Shape3DFactory()")
         factory3D = Shape3DFactory()
 
         print()
 
-        print("shape1 = factory.getShape(1)")
+        print(">>> shape1 = factory.getShape(1)")
         shape1 = factory2D.getShape(1)
 
-        print("shape1.draw()")
+        print(">>> shape1.draw()")
         shape1.draw()
-        print("shape1.getSides()")
+        print(">>> shape1.getSides()")
         shape1.getSides()
-        print("shape1.getVertices()")
+        print(">>> shape1.getVertices()")
         shape1.getVertices()
 
         print()
 
-        print("shape2 = factory2D.getShape(3)")
+        print(">>> shape2 = factory2D.getShape(3)")
         shape2 = factory2D.getShape(3)
 
-        print("shape2.draw()")
+        print(">>> shape2.draw()")
         shape2.draw()
-        print("shape2.getSides()")
+        print(">>> shape2.getSides()")
         shape2.getSides()
-        print("shape2.getVertices()")
+        print(">>> shape2.getVertices()")
         shape2.getVertices()
 
         print()
 
-        print("shape3 = factory2D.getShape(6)")
+        print(">>> shape3 = factory2D.getShape(6)")
         shape3 = factory2D.getShape(6)
 
         print()
         print("-----------------------------------------")
         print()
 
-        print("shape4 = factory.getShape(4)")
+        print(">>> shape4 = factory.getShape(4)")
         shape4 = factory3D.getShape(4)
 
-        print("shape4.build()")
+        print(">>> shape4.build()")
         shape4.build()
-        print("shape4.getFaces()")
+        print(">>> shape4.getFaces()")
         shape4.getFaces()
-        print("shape4.getVertices()")
+        print(">>> shape4.getVertices()")
         shape4.getVertices()
 
         print()
 
-        print("shape5 = factory3D.getShape(10)")
+        print(">>> shape5 = factory3D.getShape(10)")
         shape5 = factory3D.getShape(10)
 
-        print("shape5.build()")
+        print(">>> shape5.build()")
         shape5.build()
-        print("shape5.getFaces()")
+        print(">>> shape5.getFaces()")
         shape5.getFaces()
-        print("shape5.getVertices()")
+        print(">>> shape5.getVertices()")
         shape5.getVertices()
 
         print()
 
-        print("shape6 = factory3D.getShape(12)")
+        print(">>> shape6 = factory3D.getShape(12)")
         shape6 = factory3D.getShape(12)
 # endregion
 
@@ -144,29 +144,29 @@ class BuilderExecution:
         print("Initializing Builder execution")
         print()
 
-        print("director = Director()")
+        print(">>> director = Director()")
         director = DirectorBuilder()
 
-        print("director.setBuilder(JeepBuilder())")
+        print(">>> director.setBuilder(JeepBuilder())")
         director.setBuilder(JeepBuilder())
 
-        print("car1 = director.getCar()")
+        print(">>> car1 = director.getCar()")
         car1 = director.getCar()
 
-        print("car1.getSpecifications()")
+        print(">>> car1.getSpecifications()")
         car1.getSpecifications()
 
         print()
         print("-----------------------------------------")
         print()
 
-        print("director.setBuilder(NissanBuilder())")
+        print(">>> director.setBuilder(NissanBuilder())")
         director.setBuilder(NissanBuilder())
 
-        print("car2 = director.getCar()")
+        print(">>> car2 = director.getCar()")
         car2 = director.getCar()
 
-        print("car2.getSpecifications()")
+        print(">>> car2.getSpecifications()")
         car2.getSpecifications()
 # endregion
 
@@ -180,43 +180,43 @@ class PrototypeExecution:
         print("Initializing Prototype execution")
         print()
 
-        print("director = Director()")
+        print(">>> director = Director()")
         director = DirectorPrototype()
 
-        print("director.setBuilder(JeepBuilder())")
+        print(">>> director.setBuilder(JeepBuilder())")
         director.setBuilder(JeepBuilderPrototype())
 
-        print("car1 = director.getCar()")
+        print(">>> car1 = director.getCar()")
         car1 = director.getCar()
 
-        print("car1.getSpecifications()")
+        print(">>> car1.getSpecifications()")
         car1.getSpecifications()
 
         print()
 
-        print("car2 = car1.clone()")
+        print(">>> car2 = car1.clone()")
         car2 = car1.clone()
 
-        print("car2.getSpecifications()")
+        print(">>> car2.getSpecifications()")
         car2.getSpecifications()
 
         print()
         print("-----------------------------------------")
         print()
 
-        print("director.setBuilder(NissanBuilder())")
+        print(">>> director.setBuilder(NissanBuilder())")
         director.setBuilder(NissanBuilderPrototype())
 
-        print("car3 = director.getCar()")
+        print(">>> car3 = director.getCar()")
         car3 = director.getCar()
 
-        print("car3.getSpecifications()")
+        print(">>> car3.getSpecifications()")
         car3.getSpecifications()
 
-        print("car4 = car3.clone(\"White\")")
+        print(">>> car4 = car3.clone(\"White\")")
         car4 = car1.clone("White")
 
-        print("car4.getSpecifications()")
+        print(">>> car4.getSpecifications()")
         car4.getSpecifications()
 # endregion
 
@@ -230,34 +230,34 @@ class SingletonExecution:
         print("Initializing Singleton execution")
         print()
 
-        print("x = Singleton()")
+        print(">>> x = Singleton()")
         x = Singleton()
 
-        print("x.val = \"Burger\"")
+        print(">>> x.val = \"Burger\"")
         x.val = "Burger"
 
-        print("print(x.val)")
+        print(">>> print(x.val)")
         print(x.val)
 
         print()
 
-        print("y = Singleton()")
+        print(">>> y = Singleton()")
         y = Singleton()
 
-        print("y.val = \"Chips\"")
+        print(">>> y.val = \"Chips\"")
         y.val = "Chips"
 
-        print("print(y.val)")
+        print(">>> print(y.val)")
         print(y.val)
 
         print()
 
-        print("print(x.val)")
+        print(">>> print(x.val)")
         print(x.val)
 
         print()
 
-        print("print(x == y)")
+        print(">>> print(x == y)")
         print(x == y)
 # endregion
 
@@ -270,34 +270,34 @@ class BorgExecution:
         print("Initializing Borg execution")
         print()
 
-        print("x = Borg()")
+        print(">>> x = Borg()")
         x = Borg()
 
-        print("x.val = \"Burger\"")
+        print(">>> x.val = \"Burger\"")
         x.val = "Burger"
 
-        print("print(x.val)")
+        print(">>> print(x.val)")
         print(x.val)
 
         print()
 
-        print("y = Borg()")
+        print(">>> y = Borg()")
         y = Borg()
 
-        print("y.val = \"Chips\"")
+        print(">>> y.val = \"Chips\"")
         y.val = "Chips"
 
-        print("print(y.val)")
+        print(">>> print(y.val)")
         print(y.val)
 
         print()
 
-        print("print(x.val)")
+        print(">>> print(x.val)")
         print(x.val)
 
         print()
 
-        print("print(x == y)")
+        print(">>> print(x == y)")
         print(x == y)
 # endregion
 
@@ -310,16 +310,16 @@ class FacadeExecution:
         print("Initializing Facade execution")
         print()
 
-        print("car = Car()")
+        print(">>> car = Car()")
         car = Car()
 
-        print("car.turn_key()")
+        print(">>> car.turn_key()")
         car.turn_key()
 
-        print("car.jump()")
+        print(">>> car.jump()")
         car.jump()
 
-        print("car.turn_key()")
+        print(">>> car.turn_key()")
         car.turn_key()
 # endregion
 
